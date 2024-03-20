@@ -1,0 +1,92 @@
+@use 'base/variables' as v ;
+@use 'base/mixins'  as m;
+
+/*******Background Image Horarios********/
+.notavif.notwebp .horario {
+    @include m.tablet {
+        background-image: linear-gradient(to right, v.$primario 0%, v.$primario 50%, transparent 50%), url('../assets/img/bg_horarios.jpg');
+        background-position: center, -85rem ;
+    }
+    @include m.desktop {
+        background-position: center, top right;
+    }
+}
+
+.webp .horario {
+    @include m.tablet {
+        background-image: linear-gradient(to right, v.$primario 0%, v.$primario 50%, transparent 50%), url('../assets/img/bg_horarios.webp');
+        background-position: center, -85rem ;
+    }
+    @include m.desktop {
+        background-position: center, top right;
+    }
+}
+
+.avif .horario {
+    @include m.tablet {
+        background-image: linear-gradient(to right, v.$primario 0%, v.$primario 50%, transparent 50%), url('../assets/img/bg_horarios.avif');
+        background-position: center, -85rem ;
+    }
+    @include m.desktop {
+        background-position: center, top right;
+    }
+}
+
+.horario {
+    background-color: v.$primario;
+
+    @include m.tablet {
+        background-color: unset;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center, bottom center;
+    }
+
+    &__grid {
+        @include m.tablet {
+            grid-template-rows: unset;
+            @include m.grid(2, 3rem);
+        }
+    }
+
+    &__contenido {
+        color: v.$blanco;
+        padding: 5rem 0;
+    }
+
+    &__heading {
+        @include m.heading;
+    }
+
+    &__texto {
+        font-size: 2.2rem;
+        line-height: 1.8;
+        text-align: center;
+    }
+}
+
+.tabla {
+    width: 100%;
+    border: .5rem solid v.$secundario;
+    text-align: center;
+    border-collapse: collapse;
+
+    &__thead {
+        background-color: v.$secundario;
+    }
+
+    &__th {
+        padding: 2rem;
+    }
+
+    &__tr {
+        &:hover {
+            background-color: darken(v.$primario, 10%);
+        }
+    }
+
+    &__td {
+        padding: 1rem;
+        font-size: 2.2rem;
+    }
+}

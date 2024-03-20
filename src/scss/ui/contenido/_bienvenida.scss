@@ -1,0 +1,25 @@
+@use 'base/variables' as v ;
+@use 'base/mixins'  as m;
+
+.bienvenida {
+    padding: 3rem 0;
+    text-align: center;
+
+    &__heading {
+        @include m.headingCursiva;
+    }
+
+    &__texto {
+        padding: 0 1rem;
+        font-size: 2.6rem;
+        color: v.$gris;
+        max-width: 50rem;
+        margin: 4rem auto 0 auto;
+        line-height: 1.4;
+
+        @include m.tablet {
+            padding: 0;
+            line-height: 1.8;
+        }
+    }
+}
